@@ -36,7 +36,7 @@ namespace shortcsv
     inline    std::string&  toString(void) noexcept { return std::get<std::string>(data); }
   };
 
-  constexpr auto string_regex   = "^\"(((\\.)|([^\"])))*\"|'(((\\.)|([^'])))*'";
+  constexpr auto string_regex   = R"("([^"\\]|\\.)*"|'([^'\\]|\\.)*')";
   constexpr auto integer_regex  = "^(0x[[:xdigit:]]+)|([+-]?[[:digit:]]+)";
   constexpr auto float_regex    = "^[+-]?([[:digit:]]+[.][[:digit:]]*|[.][[:digit:]]+)([eE][+-]?[[:digit:]]+)?";
 
